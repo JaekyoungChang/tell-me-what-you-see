@@ -1,3 +1,11 @@
+# PyRen-specific files
+saves/
+errors.txt
+log.txt
+traceback.txt
+*.rpy[~cb]
+*.rpymc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
