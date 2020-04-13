@@ -271,6 +271,6 @@ label start:
         scene black #need to be changed to window scene with the transitioning/hover Feature
         "The End"
         
-
+stop music 
 
 return # This ends the game.
