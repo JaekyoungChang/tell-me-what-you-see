@@ -114,14 +114,14 @@ label start:
                 
                 
                 scene woods
+                play sound "audio/bird1.wav"
                 p "It was a beautiful day; the sun was shining brightly and..."
-                
+                stop sound
                 if choice_gender == "girl":
                     show girl before pose 1 at center with easeinright
                 else:
                     show boy before pose 1 at center with easeinright
                 with dissolve 
-                
                 
                 menu:
                     "What happened to the kid?"
@@ -132,7 +132,6 @@ label start:
                     
                     "Accident":
                         $ flashback = "accident"
-                        
                         p "...the grass was long and tickling my knees and I think I heard the bird chirping, though It was far away...Hmmm"
                         f "A bird? Are you sure?"
                         p "pretty sure...Why do you ask?"
@@ -154,10 +153,13 @@ label start:
         with dissolve  
          
         #Add Sound effect of heart beeping
+        play sound2 "audio/heartbeat_fast.mp3"
+        play sound "audio/heart_monitor_beeps.mp3"
         Heart_monitor " beep...beep...beep...beep.beep.beepbeepbeep"
+        stop sound
         
         show father armcross right at center with easeinright
-        
+        pause
         f "%(choice_name)s, please try and calm down, don't overdo it!"
         
         if choice_gender == "girl":
@@ -174,9 +176,11 @@ label start:
     label continue_flashback_accident:
     
     scene woods
+    play sound "audio/buzzing.mp3"
     p "There was a loud buzzing sound, Jimmy wanted to go closer to check it out."
     p "I told him not to go...it wasn't safe...then i saw a light."
     p "It was so bright and beautiful, I couldn't look away..."
+    stop sound
     
     #show bright light
     scene black
