@@ -1,6 +1,7 @@
 # The script of the game goes in this file.
 
-define Heart_monitor = Character("Heart Monitor")
+define hm = Character("Heart Monitor", image="heartmonitor")
+image side heartmonitor = im.Scale("images/heartmonitor.png", 250, 250, xoffset=0, yoffset=0)
 
 # Father
 define f = Character("Father", image="father")
@@ -59,7 +60,7 @@ label start:
             $ choice_name = renpy.input("Choose your character's name!")
             if choice_name == "":
                 "You didnt type a name"
-            $ p = g # #This fixes the side image problem
+            $ p = g # This fixes the side image problem
             jump scene_1
         "Boy":
             $ choice_gender = "boy"
@@ -71,10 +72,21 @@ label start:
             
     label scene_1:
         
-        # Start by playing some music.
-        play music "audio/Art Of Silence_V2.mp3" fadeout 1.0 fadein 1.0
-
+        #This can later be changed to a mute button option..  This can also count as customization? 
+        #Sound effects are clearer and more engaging without music
+        
+        menu:
+            # Start by playing some music.
+            "Would you like music to play during this Visual Novel?" 
+            
+            "Yes":
+                play music "audio/Art Of Silence_V2.mp3" fadeout 1.0 fadein 1.0
+            
+            "No":
+                
         scene black
+        
+        #Add heartbeat sounds to indicate the kid is scared? just a suggestion 
         
         p after "Am I awake? Am I alive?"
         p "Where am I? What happened to me?"
@@ -94,6 +106,7 @@ label start:
         else:
             show boy hospital sad
         
+        #running footsteps sound effects?
         f "I’m here, %(choice_name)s.. I’m here sweetheart"
         f "You’re okay, it’s going to be okay."
         p "What happened to me? Where am I?"        
@@ -151,14 +164,15 @@ label start:
         else:
             show boy hospital screaming at left with easeinleft
         with dissolve  
-         
+
+        show father armcross right at center with easeinright
+
         #Add Sound effect of heart beeping
-        play sound2 "audio/heartbeat_fast.mp3"
+        play sound2 "audio/heartbeat_fast.mp3" #couldn't hear this
         play sound "audio/heart_monitor_beeps.mp3"
-        Heart_monitor " beep...beep...beep...beep.beep.beepbeepbeep"
+        hm " beep...beep...beep...beep.beep.beepbeepbeep"
         stop sound
         
-        show father armcross right at center with easeinright
         pause
         f "%(choice_name)s, please try and calm down, don't overdo it!"
         
@@ -185,6 +199,7 @@ label start:
     #show bright light
     scene black
     with fade
+        
     p "Then...then, it got dark...all dark...the light is gone and Jimmy's gone..."
     
     scene room
