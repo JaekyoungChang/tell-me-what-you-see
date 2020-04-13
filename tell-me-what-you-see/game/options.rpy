@@ -195,6 +195,9 @@ init python:
 
     build.documentation('*.html')
     build.documentation('*.txt')
+    
+    # Add a custom sound channel to allow two simultaneous sounds
+    renpy.music.register_channel('sound2')
 
 
 ## A Google Play license key is required to download expansion files and perform
