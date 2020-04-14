@@ -312,6 +312,8 @@ screen navigation():
         textbutton _("Load") action ShowMenu("load")
 
         textbutton _("Preferences") action ShowMenu("preferences")
+        
+        textbutton "Music Room" action ShowMenu("music_room")
 
         if _in_replay:
 
@@ -1516,3 +1518,43 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 600
+    
+#build some music tracks
+init python:
+    
+    mr = MusicRoom(fadeout=1.0)
+    mr.add("audio/Art Of Silence_V2.mp3", always_unlocked=True)
+    mr.add("audio/bensound-adaytoremember.mp3", always_unlocked=True)
+    mr.add("audio/bensound-sadday.mp3", always_unlocked=True)
+    mr.add("audio/bensound-betterdays.mp3", always_unlocked=True)
+    
+screen music_room:
+
+    tag menu
+
+    frame:
+        has vbox
+
+        # The buttons that play each track.
+        textbutton "Art of Silence" action mr.Play("audio/Art Of Silence_V2.mp3")
+        textbutton "A day to remember" action mr.Play("audio/bensound-adaytoremember.mp3")
+        textbutton "Sad day" action mr.Play("audio/bensound-sadday.mp3")
+        textbutton "Better days" action mr.Play("audio/bensound-betterdays.mp3")
+
+        null height 20
+
+        # Buttons that let us advance tracks.
+        textbutton "Next" action mr.Next()
+        textbutton "Previous" action mr.Previous()
+
+        null height 20
+
+        # The button that lets the user exit the music room.
+        textbutton "Main Menu" action ShowMenu("main_menu")
+
+    # Start the music playing on entry to the music room.
+    on "replace" action mr.Play()
+
+    # Restore the main menu music upon leaving.
+    on "replaced" action mr.Stop()
+    
