@@ -10,10 +10,15 @@ label start:
 
     scene room
     
+    show girl before pose 1 at left with easeinleft
+    show boy before pose 1 at right with easeinright
+
     menu:
         "Choose your character's gender!"
         
         "Girl":
+            hide boy with dissolve
+            show girl before pose 1 at center with move
             $ choice_gender = "girl"
             $ choice_name = renpy.input("Choose your character's name!")
             if choice_name == "":
@@ -21,6 +26,8 @@ label start:
             $ p = g # This fixes the side image problem
             jump hospital_scene_1
         "Boy":
+            hide girl with dissolve
+            show boy before pose 1 at center with move
             $ choice_gender = "boy"
             $ choice_name = renpy.input("Choose your character's name!")
             if choice_name == "":
