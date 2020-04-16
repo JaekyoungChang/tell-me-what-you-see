@@ -1,14 +1,16 @@
-# The script of the game goes in this file.
+﻿# The script of the game goes in this file.
 
 define b = Character("choice_name", image="boy", dynamic=True)
 define g = Character("choice_name", image="girl", dynamic=True)
 define f = Character("Father", image="father")
 define hm = Character("Heart Monitor", image="heartmonitor")
+define v6 = Character("Visual Six")
 
 # The game starts here.
 label start:
-
     scene room
+    
+    v6 "Hello there! Welcome to this visual novel! Please take a minute to customize your story by answering the following questions!"
     
     show girl before pose 1 at left with easeinleft
     show boy before pose 1 at right with easeinright
@@ -22,16 +24,21 @@ label start:
             $ choice_gender = "girl"
             $ choice_name = renpy.input("Choose your character's name!")
             if choice_name == "":
-                "You didnt type a name"
+                 "You didn't type a name! You can go back and try again, otherwise we can name the character 'Jane Doe' you!"
+                 $ choice_name = "Jane Doe"
+                
             $ p = g # This fixes the side image problem
             jump hospital_scene_1
+            
         "Boy":
             hide girl with dissolve
             show boy before pose 1 at center with move
             $ choice_gender = "boy"
             $ choice_name = renpy.input("Choose your character's name!")
             if choice_name == "":
-                "You didnt type a name"
+                 "You didn't type a name! You can go back and try again, otherwise we can name the character 'John Doe' you!"
+                 $ choice_name = "John Doe"
+                
             $ p = b #This fixes the side image problem
             jump hospital_scene_1
             
