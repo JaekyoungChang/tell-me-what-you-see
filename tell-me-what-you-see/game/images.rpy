@@ -1,6 +1,6 @@
 # Backgrounds
 image black = im.Scale("black.png", 1280, 720)
-image woods = im.Scale("woods.jpg", 1280, 720) #To be replaced
+image nuclear power plant = im.Scale("nuclearpowerplant.jpg", 1280, 720) #To be replaced
 #TODO: replace this
 #image house = im.Scale("", 1280, 720)
 image room = im.Scale("room.jpg", 1280, 720)
@@ -11,6 +11,10 @@ image mind 3 = "mind_3.png"
 image mind 4 = "mind_4.png"
 image mind 5 = "mind_5.png"
 image mind 6 = "mind_6.png"
+
+#Window scenes
+image windowscene ugly ="windowscene-bad.png" #To be Replaced!!
+image windowscene pretty = "windowscene-good.png" #To be Replaced!!
 
 # Boy
 image side boy = im.Scale("boy_after_sad.png", 250, 500, xoffset=0, yoffset=200)
@@ -38,6 +42,10 @@ image side father = im.Scale("images/father_pose_1.png", 250, 500, xoffset=0, yo
 image father armcross left = "father_pose_1.png"
 image father armcross right= "father_pose_2.png"
 image father standing = "father_pose_3.png"
+
+#Jimmy
+image jimmy = "Jimmy.png"
+image jimmy scared = "jimmy-scared.png"
 
 # Heart Monitor
 image side heartmonitor = im.Scale("images/heartmonitor.png", 250, 250, xoffset=0, yoffset=0)
