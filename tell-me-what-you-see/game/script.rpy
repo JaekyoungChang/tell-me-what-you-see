@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 define b = Character("choice_name", image="boy", dynamic=True)
 define g = Character("choice_name", image="girl", dynamic=True)
@@ -42,6 +42,7 @@ label start:
             $ p = b #This fixes the side image problem
             jump hospital_scene_1
             
+                      
             
 label hospital_scene_1:
     
@@ -96,28 +97,41 @@ label hospital_scene_1:
            
 label flashback_scene_1:
     
-    scene woods
     play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
     
     p "It was a beautiful day; the sun was shining brightly and..."
+       
     
-    if choice_gender == "girl":
-        show girl before pose 1 at center with easeinright
-    else:
-        show boy before pose 1 at center with easeinright
-    with dissolve 
     
     menu:
-        "What happened to the kid?"
+        "What happened to %(choice_name)s?"
         
-        "Fell":
+        "%(choice_name)s fell in the lake":
             $ flashback = "fall"
+            
+            if choice_gender == "girl":
+                show girl before pose 1 at center with easeinright
+            else:
+                show boy before pose 1 at center with easeinright
+                show jimmy at right
+            with dissolve 
+            
+            
             p "I fell"
             jump hospital_scene_2
         
-        "Accident":
+        "A nuclear power plant accident":
+            scene nuclear power plant
             $ flashback = "accident"
             play sound "audio/bird1.wav"
+            
+            if choice_gender == "girl":
+                show girl before pose 1 at center with easeinright
+            else:
+                show boy before pose 1 at center with easeinright
+                show jimmy at right
+            with dissolve 
+            
             p "...the grass was long and tickling my knees and I think I heard the bird chirping, though It was far away...Hmmm"
             f "A bird? Are you sure?"
             stop sound fadeout 1.0
@@ -154,38 +168,56 @@ label hospital_scene_2:
     f "%(choice_name)s, please try and calm down, don't overdo it!"
     stop sound fadeout 1.0
     $ renpy.music.set_volume(0.3, 0.5, channel="sound2")
+    
     if choice_gender == "girl":
         show girl hospital sad
     else:
         show boy hospital sad 
     with dissolve
+    
     p "I am okay, I want to remember!"
     stop sound2 fadeout 1.0
-    if flashback == "fell":
-        jump flashback_scene_2
-    elif flashback == "accident":
-        jump flashback_scene_2
+    
+    jump flashback_scene_2
     
 label flashback_scene_2:
-
-    scene woods
-    play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
-    $ renpy.music.set_volume(0.3, 0.5, channel="music")
-    play sound "audio/buzzing.mp3"
-    p "There was a loud buzzing sound, Jimmy wanted to go closer to check it out."
-    p "I told him not to go...it wasn't safe...then i saw a light."
-    p "It was so bright and beautiful, I couldn't look away..."
-    stop sound fadeout 1.0
-    $ renpy.music.set_volume(0.6, 0.5, channel="music")
     
-    #show bright light
-    scene black
-    with fade
+        if flashback == "fell":
+            #scene lake
+            p " complete story"     
+            
+            scene black  with fade
+                
+            p "Then...then, it got dark...all dark...the light is gone"
+            f "It's okay, %(choice_name)s it's all over now, it's okay!"
+            jump hospital_scene_3
         
-    p "Then...then, it got dark...all dark...the light is gone and Jimmy's gone..."
+        elif flashback == "accident":
+            
+            scene nuclear power plant
+            
+            play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
+            $ renpy.music.set_volume(0.3, 0.5, channel="music")
+            play sound "audio/buzzing.mp3"
+            
+            p "There was a loud buzzing sound, Jimmy wanted to go closer to check it out."
+            p "I told him not to go...it wasn't safe...then i saw a light."
+            p "It was so bright and beautiful, I couldn't look away..."
+            
+            stop sound fadeout 1.0
+            $ renpy.music.set_volume(0.6, 0.5, channel="music")
+            
+            #show bright light
+            scene black with fade
+                
+            p "Then...then, it got dark...all dark...the light is gone"
+            f "It's okay, %(choice_name)s it's all over now, it's okay!"
+            jump hospital_scene_3
+        
+
     
-    scene room
-    with fade
+label hospital_scene_3:    
+    scene room with fade
     
     show father armcross right at center 
     with dissolve
@@ -196,7 +228,8 @@ label flashback_scene_2:
         show boy hospital sad at left
     with dissolve
     
-    f "It's okay, %(choice_name)s it's all over now, it's okay!"
+    p "Dad?"
+    f "Yes, %(choice_name)s?"
     p "Will I be able to see when they take the bandages off and my eyes are open?"
     
     menu:
@@ -216,9 +249,7 @@ label flashback_scene_2:
 
                                              
 label window_scene:         
-    
-    scene room
-    
+      
     p "Is there a window in here?"
     f "Yes there is."
     p "Please dad. Tell me what you see. Don’t leave out a thing!"
@@ -255,28 +286,30 @@ label window_scene:
         "Is that what the parent really sees?"
         
         "Yes, it is":
+            $ windowview = "truth"
             f "That's exactly what i'm seeing, %(choice_name)s. The view is lovely"
             p "I really miss looking out the window..I took that for granted."
             p "I would give anything just to look out the window right now.."
             jump ending
             
         "No, the parent is lying":
+            $ windowview = "false"
             f "Nature is beautiful, %(choice_name)s"
             p "I really miss looking out the window..I took that for granted."
             p "I would give anything just to look out the window right now.."
-            jump ending_plottwist
+            jump ending
             
             
 label ending:
     
-    scene black #need to be changed to window scene
+    if windowview == "truth":
+        show windowscene pretty #need to be changed to window scene
+         
+    elif windowview == "false":
     
-    "The End"        
-
-
-label ending_plottwist:
-    
-    scene black #need to be changed to window scene with the transitioning/hover Feature
+        scene windowscene pretty #need to be changed to window scene with the transitioning/hover Feature
+        pause
+        show windowscene ugly
     
     "The End"
         
