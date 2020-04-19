@@ -107,17 +107,35 @@ label flashback_scene_1:
         "What happened to %(choice_name)s?"
         
         "%(choice_name)s fell in the lake":
+            #scene lake and tree?
             $ flashback = "fall"
+            play sound "audio/splash.mp3"
             
             if choice_gender == "girl":
                 show girl before pose 1 at center with easeinright
             else:
                 show boy before pose 1 at center with easeinright
-                show jimmy at right
+            show jimmy at right
             with dissolve 
             
-            
-            p "I fell"
+            p "...the lake was beckoning, it was so hot we were just dying to jump in the water."
+            p "The fish were splashing and bobbing around, relieved to be out of the sticky hot air."
+            f "Are you sure the fish were splashing around?"
+            stop sound fadeout 1.0
+            p "Pretty sure, why do you ask?"
+            f "Ah, no reason, please go on..."
+            p "I climbed up onto a big old gum tree and walked out on the biggest branch hanging over the lake."
+            play sound "audio/light_wind.mp3"
+            $ renpy.music.set_volume(0.5, 0.5, channel="music")
+            p "I looked up and noticed dark storm clouds moving over us."
+            p "They came so quickly and the wind got so strong and it felt so angry."
+            stop sound fadeout 1.0
+            play sound "audio/medium-wind.mp3"
+            p "I grabbed a notch on the branch and held it tightly." 
+            p "I could hear thunder rolling in and started to feel like i was in danger."
+            p "I couldn't get back in, I couldn't let go, I started to panic and shake..."
+            stop sound fadeout 1.0
+                                                
             jump hospital_scene_2
         
         "A nuclear power plant accident":
@@ -129,7 +147,7 @@ label flashback_scene_1:
                 show girl before pose 1 at center with easeinright
             else:
                 show boy before pose 1 at center with easeinright
-                show jimmy at right
+            show jimmy at right
             with dissolve 
             
             p "...the grass was long and tickling my knees and I think I heard the bird chirping, though It was far away...Hmmm"
@@ -157,7 +175,7 @@ label hospital_scene_2:
     show father armcross right at center with easeinright
 
     #Add Sound effect of heart beeping
-    stop music 
+    stop music fadeout 1.0
     $ renpy.music.set_volume(0.6, 0.5, channel="sound2")
     play sound "audio/heartbeat_fast.mp3" #couldn't hear this
     play sound2 "audio/heart_monitor_beeps.mp3"
@@ -177,19 +195,28 @@ label hospital_scene_2:
     
     p "I am okay, I want to remember!"
     stop sound2 fadeout 1.0
-    
     jump flashback_scene_2
     
 label flashback_scene_2:
     
-        if flashback == "fell":
-            #scene lake
-            p " complete story"     
+        if flashback == "fall":
+            scene black #change to the lake
+            play sound "audio/thunder.mp3"
+            #play sound a loud crack
+            p "There was a loud crack, I saw sparks and a flash of light."     
+            p "The branch started moving and swaying."
+            p "Oh no I think it's falling, I think I'm falling.."
+            p "I felt the breeze through my hair and in my face."
+            stop sound fadeout 1.0
             
-            scene black  with fade
-                
-            p "Then...then, it got dark...all dark...the light is gone"
+            scene black  with fade #change to the scene unter water
+            #play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
+            #$ renpy.music.set_volume(0.3, 0.5, channel="music")
+            #play sound falling in the water
+            p "Then the coolness of the water..I'm going under, it's so calm and tranquil here..."
             f "It's okay, %(choice_name)s it's all over now, it's okay!"
+            #stop music fadeout 1.0
+            #stop sound fadeout 1.0
             jump hospital_scene_3
         
         elif flashback == "accident":
