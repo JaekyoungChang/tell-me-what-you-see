@@ -8,7 +8,7 @@ define v6 = Character("Visual Six")
 
 # The game starts here.
 label start:
-    scene room
+    scene room with dissolve
     
     v6 "Hello there! Welcome to this visual novel! Please take a minute to customize your story by answering the following questions!"
     
@@ -49,7 +49,7 @@ label hospital_scene_1:
     $ renpy.music.set_volume(0.3, 0, channel="music")
     play music "audio/Art Of Silence_V2.mp3" fadeout 1.0 fadein 1.0
             
-    scene black
+    scene black with fade
     
     play sound "audio/heartbeat_fast.mp3"
     p after "Am I awake? Am I alive?"
@@ -59,7 +59,7 @@ label hospital_scene_1:
     stop sound fadeout 1.0
     $ renpy.music.set_volume(1, 0.5, channel="music")
     
-    scene room
+    scene room with wipeleft
     
     if choice_gender == "girl":
         show girl hospital screaming at left with easeinleft
@@ -71,9 +71,9 @@ label hospital_scene_1:
     play sound "audio/footsteps.mp3"
     show father standing at center with easeinright  
     if choice_gender == "girl":
-        show girl hospital sad
+        show girl hospital sad with move
     else:
-        show boy hospital sad
+        show boy hospital sad with move
     
     stop sound
     f "I’m here, %(choice_name)s.. I’m here sweetheart"
@@ -139,7 +139,7 @@ label flashback_scene_1:
             jump hospital_scene_2
         
         "A nuclear power plant accident":
-            scene nuclear power plant
+            scene nuclear power plant with squares
             $ flashback = "accident"
             play sound "audio/bird1.wav"
             
@@ -164,7 +164,7 @@ label flashback_scene_1:
           
 label hospital_scene_2:
     
-    scene room #change to the hospital image
+    scene room with dissolve #change to the hospital image
     
     if choice_gender == "girl":
         show girl hospital screaming at left with easeinleft
@@ -200,7 +200,7 @@ label hospital_scene_2:
 label flashback_scene_2:
     
         if flashback == "fall":
-            scene black #change to the lake
+            scene black with squares #change to the lake
             play sound "audio/thunder.mp3"
             #play sound a loud crack
             p "There was a loud crack, I saw sparks and a flash of light."     
@@ -209,7 +209,7 @@ label flashback_scene_2:
             p "I felt the breeze through my hair and in my face."
             stop sound fadeout 1.0
             
-            scene black  with fade #change to the scene unter water
+            scene black with fade #change to the scene unter water
             #play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
             #$ renpy.music.set_volume(0.3, 0.5, channel="music")
             #play sound falling in the water
@@ -221,7 +221,7 @@ label flashback_scene_2:
         
         elif flashback == "accident":
             
-            scene nuclear power plant
+            scene nuclear power plant with irisin
             
             play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
             $ renpy.music.set_volume(0.3, 0.5, channel="music")
@@ -287,25 +287,25 @@ label window_scene:
     
     pause
     
-    scene mind 1
+    scene mind 1 with dissolve
     play sound "audio/bird1.wav"
     f "Well...the grass is really green, it's like miles and miles of it..."
     
-    scene mind 2
+    scene mind 2 with dissolve
     play sound "audio/wave_ocean.mp3"
     f "There's a couple of rivers that run across it. beautiful and calm."
     
-    scene mind 3
+    scene mind 3 with dissolve
     f "The sky is a solid baby blue, there's a couple of clouds up in the sky but not too may, just enough."
     p "That's nice. Tell me more."
     
-    scene mind 4
+    scene mind 4 with dissolve
     f "And if you look closely you can see a few mountains peeking behind a cluster of trees. It's extraordinary..."
 
-    scene mind 5
+    scene mind 5 with dissolve
     f "Oh and the flowers! they are so beautiful."
 
-    scene mind 6
+    scene mind 6 with dissolve
     f "It's spring now so they're fully bloomed and in so many different clours, they are pink, yellow and even purple."
     p "That sounds like something straight out of a movie! Are you sure you're not just seeing things?"
     
@@ -330,7 +330,7 @@ label window_scene:
 label ending:
     
     if windowview == "truth":
-        show windowscene pretty #need to be changed to window scene
+        show windowscene pretty with dissolve #need to be changed to window scene
          
     elif windowview == "false":
     
