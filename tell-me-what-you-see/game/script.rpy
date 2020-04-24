@@ -9,7 +9,7 @@ define v6 = Character("Visual Six")
 # The game starts here.
 label start:
     scene room with dissolve
-    
+    play music "audio/memories_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
     v6 "Hello there! Welcome to this visual novel! Please take a minute to customize your story by answering the following questions!"
     
     show girl before pose 1 at left with easeinleft
@@ -126,15 +126,17 @@ label flashback_scene_1:
             f "Ah, no reason, please go on..."
             p "I climbed up onto a big old gum tree and walked out on the biggest branch hanging over the lake."
             play sound "audio/light_wind.mp3"
-            $ renpy.music.set_volume(0.5, 0.5, channel="music")
+            $ renpy.music.set_volume(0.3, 0, channel="music")
             p "I looked up and noticed dark storm clouds moving over us."
             p "They came so quickly and the wind got so strong and it felt so angry."
             stop sound fadeout 1.0
             play sound "audio/medium-wind.mp3"
             p "I grabbed a notch on the branch and held it tightly." 
+            play sound "audio/thunder.mp3"
             p "I could hear thunder rolling in and started to feel like i was in danger."
             p "I couldn't get back in, I couldn't let go, I started to panic and shake..."
             stop sound fadeout 1.0
+            $ renpy.music.set_volume(1, 0.5, channel="music")
                                                 
             jump hospital_scene_2
         
@@ -201,22 +203,24 @@ label flashback_scene_2:
     
         if flashback == "fall":
             scene black with squares #change to the lake
-            play sound "audio/thunder.mp3"
-            #play sound a loud crack
+            play music "audio/life_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
+            $ renpy.music.set_volume(0.3, 0, channel="music")
+            play sound "audio/thunderstorm.mp3"
             p "There was a loud crack, I saw sparks and a flash of light."     
             p "The branch started moving and swaying."
+            play sound "audio/wood_crack.mp3"
             p "Oh no I think it's falling, I think I'm falling.."
             p "I felt the breeze through my hair and in my face."
             stop sound fadeout 1.0
             
             scene black with fade #change to the scene unter water
-            #play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
-            #$ renpy.music.set_volume(0.3, 0.5, channel="music")
-            #play sound falling in the water
+            
+            stop music fadeout 1.0
+            play sound "audio/falling_water.mp3"
             p "Then the coolness of the water..I'm going under, it's so calm and tranquil here..."
+            play music "audio/life_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
             f "It's okay, %(choice_name)s it's all over now, it's okay!"
-            #stop music fadeout 1.0
-            #stop sound fadeout 1.0
+            stop sound fadeout 1.0
             jump hospital_scene_3
         
         elif flashback == "accident":
@@ -245,7 +249,6 @@ label flashback_scene_2:
     
 label hospital_scene_3:    
     scene room with fade
-    
     show father armcross right at center 
     with dissolve
     
