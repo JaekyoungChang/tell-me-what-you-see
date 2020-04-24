@@ -1524,9 +1524,9 @@ init python:
     
     mr = MusicRoom(fadeout=1.0)
     mr.add("audio/Art Of Silence_V2.mp3", always_unlocked=True)
-    mr.add("audio/bensound-adaytoremember.mp3", always_unlocked=True)
-    mr.add("audio/bensound-sadday.mp3", always_unlocked=True)
-    mr.add("audio/bensound-betterdays.mp3", always_unlocked=True)
+    mr.add("audio/bensound-slowmotion.mp3", always_unlocked=True)
+    mr.add("audio/trust_by MrBusiness.mp3", always_unlocked=True)
+    mr.add("audio/life_by MrBusiness.mp3", always_unlocked=True)
     
 screen music_room:
 
@@ -1537,9 +1537,9 @@ screen music_room:
 
         # The buttons that play each track.
         textbutton "Art of Silence" action mr.Play("audio/Art Of Silence_V2.mp3")
-        textbutton "A day to remember" action mr.Play("audio/bensound-adaytoremember.mp3")
-        textbutton "Sad day" action mr.Play("audio/bensound-sadday.mp3")
-        textbutton "Better days" action mr.Play("audio/bensound-betterdays.mp3")
+        textbutton "Slowmotion" action mr.Play("audio/bensound-slowmotion.mp3")
+        textbutton "Trust" action mr.Play("audio/trust_by MrBusiness.mp3")
+        textbutton "Life" action mr.Play("audio/life_by MrBusiness.mp3")
 
         null height 20
 
