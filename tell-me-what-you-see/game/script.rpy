@@ -336,10 +336,9 @@ label ending:
         show windowscene pretty with dissolve #need to be changed to window scene
          
     elif windowview == "false":
-    
-        scene windowscene pretty #need to be changed to window scene with the transitioning/hover Feature
+        scene windowscene pretty
+        show screen windowscene_overlay
         pause
-        show windowscene ugly
     
     "The End"
         

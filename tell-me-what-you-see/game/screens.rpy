@@ -1558,3 +1558,20 @@ screen music_room:
     # Restore the main menu music upon leaving.
     on "replaced" action mr.Stop()
     
+#hovering and transitons in screens
+
+screen windowscene_pretty():
+    image "windowscene-good.png"
+    
+screen windowscene_ugly():
+    image "windowscene-bad.png"
+   
+screen windowscene_overlay():
+    mousearea:
+        area (0.5, 0.5, 0.5, 100)
+        hovered Show("windowscene_ugly", transition=dissolve)
+        unhovered Hide("windowscene_ugly", transition=dissolve)
+          
+    
+ 
+    
