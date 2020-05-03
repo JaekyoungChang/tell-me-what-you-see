@@ -230,10 +230,13 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
-
+    activate_sound "audio/click_1.mp3"
+    hover_sound "audio/click_2.mp3"
+    
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
-
+    activate_sound "audio/click_1.mp3"
+    hover_sound "audio/click_2.mp3"
 
 ## Quick Menu screen ###########################################################
 ##
@@ -343,10 +346,13 @@ style navigation_button_text is gui_button_text
 style navigation_button:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
-
+    activate_sound "audio/click_1.mp3"
+    hover_sound "audio/click_2.mp3"
+    
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
-
+    activate_sound "audio/click_1.mp3"
+    hover_sound "audio/click_2.mp3"
 
 ## Main Menu screen ############################################################
 ##
@@ -1191,9 +1197,13 @@ style confirm_prompt_text:
 
 style confirm_button:
     properties gui.button_properties("confirm_button")
+    activate_sound "audio/click_1.mp3"
+    hover_sound "audio/click_2.mp3"
 
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
+    activate_sound "audio/click_1.mp3"
+    hover_sound "audio/click_2.mp3"
 
 
 ## Skip indicator screen #######################################################
