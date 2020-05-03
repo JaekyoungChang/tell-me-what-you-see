@@ -6,6 +6,7 @@ define f = Character("Father", image="father")
 define hm = Character("Heart Monitor", image="heartmonitor")
 define v6 = Character("Visual Six")
 
+
 # The game starts here.
 label start:
     scene room with dissolve
@@ -159,6 +160,7 @@ label flashback_scene_1:
             f "Oh, ah, no reason, please go on..."
             p "We were walking past the old nuclear power plant, then we went inside the fence."
             p "I am not sure how or why we went inside, but I was scared."
+            play sound "audio/can_kick.mp3"
             p "Jimmy was kicking an old can along the ground, he was not afraid." 
             p "I felt my legs shaking, something was wrong in there..."
             jump hospital_scene_2
