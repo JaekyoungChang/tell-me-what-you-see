@@ -294,14 +294,15 @@ label window_scene:
     
     scene mind 1 with dissolve
     play sound "audio/bird1.wav"
-    f "Well...the grass is really green, it's like miles and miles of it..."
+    f "The sky is a solid baby blue, there's a couple of clouds up in the sky but not too may, just enough."
+
     
     scene mind 2 with dissolve
     play sound "audio/wave_ocean.mp3"
-    f "There's a couple of rivers that run across it. beautiful and calm."
-    
+    f "Well...the grass is really green, it's like miles and miles of it..."
+   
     scene mind 3 with dissolve
-    f "The sky is a solid baby blue, there's a couple of clouds up in the sky but not too may, just enough."
+    f  "There's a couple of rivers that run across it. beautiful and calm."
     p "That's nice. Tell me more."
     
     scene mind 4 with dissolve
@@ -309,8 +310,6 @@ label window_scene:
 
     scene mind 5 with dissolve
     f "Oh and the flowers! they are so beautiful."
-
-    scene mind 6 with dissolve
     f "It's spring now so they're fully bloomed and in so many different clours, they are pink, yellow and even purple."
     p "That sounds like something straight out of a movie! Are you sure you're not just seeing things?"
     
