@@ -302,7 +302,7 @@ label window_scene:
     f "Well...the grass is really green, it's like miles and miles of it..."
    
     scene mind 3 with dissolve
-    f  "There's a couple of rivers that run across it. beautiful and calm."
+    f  "There's a river that runs across it. Beautiful and calm."
     p "That's nice. Tell me more."
     
     scene mind 4 with dissolve
