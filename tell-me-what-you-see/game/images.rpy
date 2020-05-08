@@ -3,7 +3,8 @@ image black = im.Scale("black.png", 1280, 720)
 image nuclear power plant = im.Scale("nuclearpowerplant.jpg", 1280, 720) #To be replaced
 #TODO: replace this
 #image house = im.Scale("", 1280, 720)
-image room = im.Scale("room.jpg", 1280, 720)
+image room open = im.Scale("room-window-open.png", 1280, 720)
+image room closed = im.Scale("room-window-closed.png", 1280, 720)
 image hospital = im.Scale("hospital.png", 1280, 720)
 image mind 1 = im.Scale("mind_1.png", 1280, 720)
 image mind 2 = im.Scale("mind_2.png", 1280, 720)
@@ -39,6 +40,7 @@ image girl hospital screaming = "girl_hospital_screaming.png"
 
 # Father
 image side father = im.Scale("images/father_pose_1.png", 250, 500, xoffset=0, yoffset=200)
+image side father smiling = im.Scale("images/father_smile.png", 250, 500, xoffset=0, yoffset=200)
 image father armcross left = "father_pose_1.png"
 image father armcross right= "father_pose_2.png"
 image father standing = "father_pose_3.png"

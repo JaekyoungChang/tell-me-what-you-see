@@ -9,7 +9,7 @@ define v6 = Character("Visual Six")
 
 # The game starts here.
 label start:
-    scene room with dissolve
+    scene room closed with dissolve
     play music "audio/memories_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
     v6 "Hello there! Welcome to this visual novel! Please take a minute to customize your story by answering the following questions!"
     
@@ -25,7 +25,7 @@ label start:
             $ choice_gender = "girl"
             $ choice_name = renpy.input("Choose your character's name!")
             if choice_name == "":
-                 "You didn't type a name! You can go back and try again, otherwise we can name the character 'Jane Doe' you!"
+                 "You didn't type a name! You can go back and try again, otherwise we can name the character 'Jane Doe' for you!"
                  $ choice_name = "Jane Doe"
                 
             $ p = g # This fixes the side image problem
@@ -60,7 +60,7 @@ label hospital_scene_1:
     stop sound fadeout 1.0
     $ renpy.music.set_volume(1, 0.5, channel="music")
     
-    scene room with wipeleft
+    scene room closed with wipeleft
     
     if choice_gender == "girl":
         show girl hospital screaming at left with easeinleft
@@ -168,7 +168,7 @@ label flashback_scene_1:
           
 label hospital_scene_2:
     
-    scene room with dissolve #change to the hospital image
+    scene room closed with dissolve #change to the hospital image
     
     if choice_gender == "girl":
         show girl hospital screaming at left with easeinleft
@@ -250,7 +250,7 @@ label flashback_scene_2:
 
     
 label hospital_scene_3:    
-    scene room with fade
+    scene room closed with fade
     show father armcross right at center 
     with dissolve
     
@@ -281,36 +281,39 @@ label hospital_scene_3:
 
                                              
 label window_scene:         
-      
+    show father standing at center
+
     p "Is there a window in here?"
     f "Yes there is."
     p "Please dad. Tell me what you see. Don’t leave out a thing!"
-    f standing "Well, um, okay"
+    show father armcross right at center
+    f "Well, um, okay"
 
     play music "audio/trust_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
+    show room open
     play sound "audio/open_window.mp3"
-    
+ 
     pause
     
     scene mind 1 with dissolve
     play sound "audio/bird1.wav"
-    f "The sky is a solid baby blue, there's a couple of clouds up in the sky but not too may, just enough."
+    f smiling "The sky is a solid baby blue, there's a couple of clouds up in the sky but not too may, just enough."
 
     
     scene mind 2 with dissolve
     play sound "audio/wave_ocean.mp3"
-    f "Well...the grass is really green, it's like miles and miles of it..."
+    f smiling "Well...the grass is really green, it's like miles and miles of it..."
    
     scene mind 3 with dissolve
-    f  "There's a river that runs across it. Beautiful and calm."
-    p "That's nice. Tell me more."
+    f smiling "There's a river that runs across it. Beautiful and calm."
+    p smiling "That's nice. Tell me more."
     
     scene mind 4 with dissolve
-    f "And if you look closely you can see a few mountains peeking behind a cluster of trees. It's extraordinary..."
+    f smiling "And if you look closely you can see a few mountains peeking behind a cluster of trees. It's extraordinary..."
 
     scene mind 5 with dissolve
-    f "Oh and the flowers! they are so beautiful."
-    f "It's spring now so they're fully bloomed and in so many different clours, they are pink, yellow and even purple."
+    f smiling "Oh and the flowers! they are so beautiful."
+    f smiling"It's spring now so they're fully bloomed and in so many different clours, they are pink, yellow and even purple."
     p "That sounds like something straight out of a movie! Are you sure you're not just seeing things?"
     
     menu:
@@ -318,14 +321,14 @@ label window_scene:
         
         "Yes, it is":
             $ windowview = "truth"
-            f "That's exactly what i'm seeing, %(choice_name)s. The view is lovely"
+            f smiling "That's exactly what i'm seeing, %(choice_name)s. The view is lovely"
             p "I really miss looking out the window..I took that for granted."
-            p "I would give anything just to look out the window right now.."
+            p  "I would give anything just to look out the window right now.."
             jump ending
             
         "No, the parent is lying":
             $ windowview = "false"
-            f "Nature is beautiful, %(choice_name)s"
+            f  "Nature is beautiful, %(choice_name)s"
             p "I really miss looking out the window..I took that for granted."
             p "I would give anything just to look out the window right now.."
             jump ending
