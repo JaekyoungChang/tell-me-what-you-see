@@ -82,7 +82,7 @@ label hospital_scene_1:
     p "What happened to me? Where am I?"        
     f "You are at the hospital, sweetheart"
     p "I can feel the bandages on my eyes, why can't i see?"
-    f "I don't know, Do you remember anything?"
+    f  armcross right "I don't know, Do you remember anything?"
     
     menu:
         "Does %(choice_name)s remember what happened?"
@@ -285,7 +285,7 @@ label window_scene:
     p "Is there a window in here?"
     f "Yes there is."
     p "Please dad. Tell me what you see. Don’t leave out a thing!"
-    f "Well, um, okay"
+    f standing "Well, um, okay"
 
     play music "audio/trust_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
     play sound "audio/open_window.mp3"
@@ -302,7 +302,7 @@ label window_scene:
     f "Well...the grass is really green, it's like miles and miles of it..."
    
     scene mind 3 with dissolve
-    f  "There's a couple of rivers that run across it. beautiful and calm."
+    f  "There's a river that runs across it. Beautiful and calm."
     p "That's nice. Tell me more."
     
     scene mind 4 with dissolve
