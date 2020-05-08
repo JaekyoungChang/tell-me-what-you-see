@@ -5,16 +5,16 @@ image nuclear power plant = im.Scale("nuclearpowerplant.jpg", 1280, 720) #To be 
 #image house = im.Scale("", 1280, 720)
 image room = im.Scale("room.jpg", 1280, 720)
 image hospital = im.Scale("hospital.png", 1280, 720)
-image mind 1 = "mind_1.png"
-image mind 2 = "mind_2.png"
-image mind 3 = "mind_3.png"
-image mind 4 = "mind_4.png"
-image mind 5 = "mind_5.png"
-image mind 6 = "mind_6.png"
+image mind 1 = im.Scale("mind_1.png", 1280, 720)
+image mind 2 = im.Scale("mind_2.png", 1280, 720)
+image mind 3 =  im.Scale("mind_3.png", 1280, 720)
+image mind 4 = im.Scale("mind_4.png", 1280, 720)
+image mind 5 = im.Scale("mind_5.png", 1280, 720)
+image mind 6 = im.Scale("mind_6.png", 1280, 720)
 
 #Window scenes
-image windowscene ugly ="windowscene-bad.png" #To be Replaced!!
-image windowscene pretty = "windowscene-good.png" #To be Replaced!!
+image windowscene ugly =  im.Scale("windowscene-bad.png", 1280, 720)  #To be Replaced!!
+image windowscene pretty =  im.Scale("windowscene-good.png", 1280, 720)  #To be Replaced!!
 
 # Boy
 image side boy = im.Scale("boy_after_sad.png", 250, 500, xoffset=0, yoffset=200)

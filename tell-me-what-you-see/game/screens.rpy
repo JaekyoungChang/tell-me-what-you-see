@@ -1574,7 +1574,7 @@ screen windowscene_pretty():
     image "windowscene-good.png"
     
 screen windowscene_ugly():
-    image "windowscene-bad.png"
+    image im.Scale("windowscene-bad.png", 1280, 720)
    
 screen windowscene_overlay():
     mousearea:
