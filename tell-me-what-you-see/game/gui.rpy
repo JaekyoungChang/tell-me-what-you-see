@@ -9,7 +9,7 @@ init offset = -2
 ## Calling gui.init resets the styles to sensible default values, and sets the
 ## width and height of the game.
 init python:
-    gui.init(1280, 720)
+    gui.init(1270, 720)
 
 
 
@@ -23,69 +23,139 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#2E2327'
 
-## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#2E2327'
+################################################################################
+## Team vb have changed the following color of name  game to displaye in dark green color.
+################################################################################
 
-## The small color is used for small text, which needs to be brighter/darker to
-## achieve the same effect.
-define gui.idle_small_color = '#888888'
+define gui.accent_color = '#5f6e2c'
+
+################################################################################
+## Team vb have changed the following color code  to #2E2327 to  black color 
+## to make menu llst  displaye in black color.
+################################################################################
+define gui.idle_color = '#000000'
+
+
+################################################################################
+## Team vb have changed following color code the buttons displaye in black color.
+################################################################################
+define gui.idle_small_color = '#000000'
+
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#C4E2E2'
+################################################################################
+## Team vb have changed the following color code  to #eb0909 to red color 
+## to make the color of the hovered txt on the buttons game to displaye in red color.
+################################################################################
+define gui.hover_color = '#eb0909'
 
+
+################################################################################
+## Team vb have changed the following color code  to #eb0909 to red color 
+## to make the color of the selected option buttons game to displaye in #eb0909 color.
+################################################################################
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#BF0000'
+define gui.selected_color = '#eb0909'
 
+
+################################################################################
+## Team vb have changed the following color code  to #088212 to green color 
+## to make the color of the buttons  game to displaye in green color.
+################################################################################
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = '#084596'
+define gui.insensitive_color = '#eb0909'
 
+
+################################################################################
+## Team vb have changed the following color code  to #088212 to green color 
+## to make the color of the buttons game to displaye in green color.
+################################################################################
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-define gui.muted_color = '#a366a3'
-define gui.hover_muted_color = '#c199c1'
+##################################################################################################################
+define gui.muted_color = '#05def2'
 
+################################################################################
+## Team vb have changed the following color code   to black color 
+## to make the color of the buttons game to displaye in yellow color.
+################################################################################
+define gui.hover_muted_color = '#000000'
+
+
+################################################################################
+## Team vb have changed the following color code  to #088212 to black color 
+## to make the color of the sript of the or dialog game to displaye in black color.
+################################################################################
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#404040'
-define gui.interface_text_color = '#404040'
+define gui.text_color = '#000000'
+
+################################################################################
+## Team vb have changed the following color code  to #088212 to black color 
+## to make the color of the text of the hisory page in black color.
+################################################################################
+define gui.interface_text_color = '#000000'
 
 
+
+################################################################################
+## Team vb have changed the following font  to George.otf 
 ## Fonts and Font Sizes ########################################################
-define  gui.text_font = "DejaVuSans.ttf"
 
+define  gui.text_font = "gui/fonts/George.ttf"
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
-
+define gui.text_font = "gui/fonts/George.ttf"
 ## The font used for character names.
 define gui.name_text_font ="DejaVuSans.ttf"
-
-
 ## The font used for out-of-game text.
 define gui.interface_text_font ="DejaVuSans.ttf"
 
 
+################################################################################
+##Team vb have changed the following font  to size 27 for the script txt or story  
 ## The size of normal dialogue text.
-define gui.text_size = 32
+################################################################################
+define gui.text_size = 27
 
-## The size of character names.
-define gui.name_text_size = 32
-## The size of text in the game's user interface.
-define gui.interface_text_size = 32
+################################################################################
+##Team vb have changed the following font  to size 27 for The size of character 
+##names.
+################################################################################
+define gui.name_text_size = 27
 
-## The size of labels in the game's user interface.
-define gui.label_text_size = 24
+################################################################################
+##Team vb have changed the following font  to size 27 
+## The size of text in the main menu list.
+################################################################################
+define gui.interface_text_size = 27
 
+################################################################################
+##Team vb have changed the following font  tosize 27 for the script txt or story  
+## The size of normal dialogue text.
+################################################################################
+## The size of labels in the game's user interface such as prefernce,load,history..
+define gui.label_text_size = 27
+
+
+################################################################################
+##Team vb have changed the following font  tosize 27 for the script txt or story  
+## The size of normal dialogue text.
+################################################################################
 ## The size of text on the notify screen.
-define gui.notify_text_size = 16
+define gui.notify_text_size = 27
 
+
+################################################################################
+##Team vb have changed the following font  to size 27 
 ## The size of the game's title.
-define gui.title_text_size = 32
+################################################################################
+define gui.title_text_size = 37
 
 
-## Main and Game Menus #########################################################
-
+################################################################################
+##Team vb have changed the following Main and Game Menus
+################################################################################
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
@@ -97,11 +167,15 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 185
+define gui.textbox_height = 197
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
-define gui.textbox_yalign = 1.0
+
+## Team vb have changed this to ....
+## to make it displayed above the menu little.........
+
+define gui.textbox_yalign = 0.9
 
 
 ## The placement of the speaking character's name, relative to the textbox.
@@ -115,6 +189,7 @@ define gui.name_xalign = 0.0
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
+define gui.namebox.accent_color = '#000000'
 define gui.namebox_width = None
 define gui.namebox_height = None
 
@@ -124,7 +199,7 @@ define gui.namebox_borders = Borders(5, 5, 5, 5)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
-define gui.namebox_tile = False
+define gui.namebox_tile = None
 
 
 ## The placement of dialogue relative to the textbox. These can be a whole
@@ -134,7 +209,7 @@ define gui.dialogue_xpos = 268
 define gui.dialogue_ypos = 50
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 744
+define gui.dialogue_width = 884
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -192,7 +267,7 @@ define gui.page_button_borders = Borders(10, 4, 10, 4)
 define gui.quick_button_borders = Borders(10, 4, 10, 0)
 define gui.quick_button_text_size = 14
 define gui.quick_button_text_idle_color = gui.idle_small_color
-define gui.quick_button_text_selected_color = gui.accent_color
+define gui.quick_button_text_selected_color = '#000000'
 
 ## You can also add your own customizations, by adding properly-named variables.
 ## For example, you can uncomment the following line to set the width of a
@@ -200,21 +275,23 @@ define gui.quick_button_text_selected_color = gui.accent_color
 
 # define gui.navigation_button_width = 250
 
+##############################################################
+##Team vb have changed the following Choice Buttons which have the value of  
+##the user the option such as if boy or girl
+##############################################################
 
-## Choice Buttons ##############################################################
-##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 790
+define gui.choice_button_width = 990
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(100, 5, 100, 5)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#cccccc"
+define gui.choice_button_text_idle_color = "#eb0c0c"
 define gui.choice_button_text_hover_color = "#ffffff"
-define gui.choice_button_text_insensitive_color = "#444444"
+define gui.choice_button_text_insensitie_color = "#444444"
 
 
 ## File Slot Buttons ###########################################################
@@ -222,6 +299,9 @@ define gui.choice_button_text_insensitive_color = "#444444"
 ## A file slot button is a special kind of button. It contains a thumbnail
 ## image, and text describing the contents of the save slot. A save slot uses
 ## image files in gui/button, like the other kinds of buttons.
+## File Slot Buttons ###########################################################
+##
+
 
 ## The save slot button.
 define gui.slot_button_width = 276
@@ -240,7 +320,6 @@ define config.thumbnail_height = 144
 ## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3
 define gui.file_slot_rows = 2
-
 
 ## Positioning and Spacing #####################################################
 ##
@@ -297,7 +376,7 @@ define gui.skip_frame_borders = Borders(16, 5, 50, 5)
 define gui.notify_frame_borders = Borders(16, 5, 40, 5)
 
 ## Should frame backgrounds be tiled?
-define gui.frame_tile = False
+define gui.frame_tile = True
 
 
 ## Bars, Scrollbars, and Sliders ###############################################
@@ -314,9 +393,9 @@ define gui.scrollbar_size = 12
 define gui.slider_size = 25
 
 ## True if bar images should be tiled. False if they should be linearly scaled.
-define gui.bar_tile = False
-define gui.scrollbar_tile = False
-define gui.slider_tile = False
+define gui.bar_tile = True
+define gui.scrollbar_tile = True
+define gui.slider_tile = True
 
 ## Horizontal borders.
 define gui.bar_borders = Borders(4, 4, 4, 4)
@@ -443,7 +522,7 @@ init python:
         ## Change the size and spacing of various things.
         gui.slider_size = 36
 
-        gui.choice_button_width = 1240
+        gui.choice_button_width = 40
 
         gui.navigation_spacing = 20
         gui.pref_button_spacing = 10
