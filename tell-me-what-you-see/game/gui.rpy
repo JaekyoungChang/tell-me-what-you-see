@@ -28,7 +28,7 @@ init python:
 ## Team vb have changed the following color of name  game to displaye in dark green color.
 ################################################################################
 
-define gui.accent_color = '#5f6e2c'
+define gui.accent_color = '#3d4a0f'
 
 ################################################################################
 ## Team vb have changed the following color code  to #2E2327 to  black color 
