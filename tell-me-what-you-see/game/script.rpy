@@ -6,10 +6,9 @@ define f = Character("Father", image="father")
 define hm = Character("Heart Monitor", image="heartmonitor")
 define v6 = Character("Visual Six")
 
-
-# The game starts here.
 label start:
-    scene room closed with dissolve
+    
+    scene room with dissolve
     play music "audio/memories_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
     v6 "Hello there! Welcome to this visual novel! Please take a minute to customize your story by answering the following questions!"
     
@@ -27,7 +26,6 @@ label start:
             if choice_name == "":
                  "You didn't type a name! You can go back and try again, otherwise we can name the character 'Jane Doe' for you!"
                  $ choice_name = "Jane Doe"
-                
             $ p = g # This fixes the side image problem
             jump hospital_scene_1
             
@@ -39,12 +37,10 @@ label start:
             if choice_name == "":
                  "You didn't type a name! You can go back and try again, otherwise we can name the character 'John Doe' you!"
                  $ choice_name = "John Doe"
-                
-            $ p = b #This fixes the side image problem
+            $ p = b # This fixes the side image problem
             jump hospital_scene_1
             
-                      
-            
+
 label hospital_scene_1:
     
     $ renpy.music.set_volume(0.3, 0, channel="music")
@@ -68,7 +64,6 @@ label hospital_scene_1:
         show boy hospital screaming at left with easeinleft
     
     p "Dad!! Daddy!! Are you here?"
-    #running footsteps sound effects
     play sound "audio/footsteps.mp3"
     show father standing at center with easeinright  
     if choice_gender == "girl":
@@ -102,13 +97,11 @@ label flashback_scene_1:
     
     p "It was a beautiful day; the sun was shining brightly and..."
        
-    
-    
     menu:
         "What happened to %(choice_name)s?"
         
-        "%(choice_name)s fell in the lake":
-            #scene lake and tree?
+        "Fell in the lake":
+            scene lake before with squares
             $ flashback = "fall"
             play sound "audio/splash.mp3"
             
@@ -125,6 +118,7 @@ label flashback_scene_1:
             stop sound fadeout 1.0
             p "Pretty sure, why do you ask?"
             f "Ah, no reason, please go on..."
+            scene lake with dissolve
             p "I climbed up onto a big old gum tree and walked out on the biggest branch hanging over the lake."
             play sound "audio/light_wind.mp3"
             $ renpy.music.set_volume(0.3, 0, channel="music")
@@ -142,7 +136,7 @@ label flashback_scene_1:
             jump hospital_scene_2
         
         "A nuclear power plant accident":
-            scene nuclear power plant with squares
+            scene power plant with squares
             $ flashback = "accident"
             play sound "audio/bird1.wav"
             
@@ -168,7 +162,7 @@ label flashback_scene_1:
           
 label hospital_scene_2:
     
-    scene room closed with dissolve #change to the hospital image
+    scene room closed with dissolve
     
     if choice_gender == "girl":
         show girl hospital screaming at left with easeinleft
@@ -178,10 +172,9 @@ label hospital_scene_2:
 
     show father armcross right at center with easeinright
 
-    #Add Sound effect of heart beeping
     stop music fadeout 1.0
     $ renpy.music.set_volume(0.6, 0.5, channel="sound2")
-    play sound "audio/heartbeat_fast.mp3" #couldn't hear this
+    play sound "audio/heartbeat_fast.mp3"
     play sound2 "audio/heart_monitor_beeps.mp3"
     hm " beep...beep...beep...beep..."
     
@@ -201,58 +194,86 @@ label hospital_scene_2:
     stop sound2 fadeout 1.0
     jump flashback_scene_2
     
+    
 label flashback_scene_2:
     
         if flashback == "fall":
-            scene black with squares #change to the lake
+            
+            scene lake after with dissolve
+            
             play music "audio/life_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
             $ renpy.music.set_volume(0.3, 0, channel="music")
             play sound "audio/thunderstorm.mp3"
             p "There was a loud crack, I saw sparks and a flash of light."     
             p "The branch started moving and swaying."
-            play sound "audio/wood_crack.mp3"
-            p "Oh no I think it's falling, I think I'm falling.."
-            p "I felt the breeze through my hair and in my face."
-            stop sound fadeout 1.0
             
-            scene black with fade #change to the scene unter water
-            
-            stop music fadeout 1.0
-            play sound "audio/falling_water.mp3"
-            p "Then the coolness of the water..I'm going under, it's so calm and tranquil here..."
-            play music "audio/life_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
-            f "It's okay, %(choice_name)s it's all over now, it's okay!"
-            stop sound fadeout 1.0
-            jump hospital_scene_3
+            menu:
+             "Does %(choice_name)s hold on to the branch?"
+             "No, %(choice_name)s doesn't":
+                
+              p "I quickly let go of the branch and jumped to the bank."
+              p "We ran as fast as we could, Jimmy was faster than me,"
+              p "I was trying to keep up but I couldn't"
+              p "I was losing my breath, the thunder was so loud, it was starting to rain."
+              p "I felt my feet slip on the muddy track.."
+              scene black with dissolve
+              play sound "audio/thunderstorm.mp3"
+              jump wakeup_scene
+                
+             "Yes, %(choice_name)s does":
+                     
+              play sound "audio/wood_crack.mp3"
+              p "Oh no I think it's falling, I think I'm falling.."
+              p "I felt the breeze through my hair and in my face."
+              stop sound fadeout 1.0
+              scene underwater with fade
+              stop music fadeout 1.0
+              play sound "audio/falling_water.mp3"
+              p "Then the coolness of the water..I'm going under, it's so calm and tranquil here..."
+              play music "audio/life_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
+              f "It's okay, %(choice_name)s it's all over now, it's okay!"
+              stop sound fadeout 1.0
+              jump hospital_scene_3
         
         elif flashback == "accident":
             
-            scene nuclear power plant with irisin
+            scene power plant with irisin
             
             play music "audio/bensound-slowmotion.mp3" fadeout 1.0 fadein 1.0
             $ renpy.music.set_volume(0.3, 0.5, channel="music")
             play sound "audio/buzzing.mp3"
-            
             p "There was a loud buzzing sound, Jimmy wanted to go closer to check it out."
-            p "I told him not to go...it wasn't safe...then i saw a light."
-            p "It was so bright and beautiful, I couldn't look away..."
             
-            stop sound fadeout 1.0
-            $ renpy.music.set_volume(0.6, 0.5, channel="music")
+            menu:
+             "Does %(choice_name)s get closer to the power plant?"
+             "Yes, %(choice_name)s does":
+              p "I told him not to go...it wasn't safe...then i saw a light."
+              p "It was so bright and beautiful, I couldn't look away..."
+             
+              stop sound fadeout 1.0
+              $ renpy.music.set_volume(0.6, 0.5, channel="music")
             
-            #show bright light
-            scene black with fade
+              #show bright light
+              scene black with fade
                 
-            p "Then...then, it got dark...all dark...the light is gone"
-            f "It's okay, %(choice_name)s it's all over now, it's okay!"
-            jump hospital_scene_3
+              p "Then...then, it got dark...all dark...the light is gone"
+              jump hospital_scene_3
         
+             "No, %(choice_name)s doesn't":
+                p "I yelled out to Jimmy and told him it's too dangerous and we need to leave now!"
+                p "We ran as fast as we could, Jimmy was faster than me,"
+                p "I was trying to keep up but I couldn't"
+                play sound "audio/thunderstorm.mp3"
+                p "I was losing my breath, the thunder was so loud, it was starting to rain."
+                p "I felt my feet slip on the muddy track.."
+                scene black with dissolve
+                jump wakeup_scene
+                
 
+label hospital_scene_3:
     
-label hospital_scene_3:    
     scene room closed with fade
-    show father armcross right at center 
-    with dissolve
+    show father armcross right at center with dissolve
     
     if choice_gender == "girl":
         show girl hospital sad at left
@@ -280,7 +301,8 @@ label hospital_scene_3:
             jump window_scene
 
                                              
-label window_scene:         
+label window_scene:
+    
     show father standing at center
 
     p "Is there a window in here?"
@@ -299,7 +321,6 @@ label window_scene:
     play sound "audio/bird1.wav"
     f smiling "The sky is a solid baby blue, there's a couple of clouds up in the sky but not too may, just enough."
 
-    
     scene mind 2 with dissolve
     play sound "audio/wave_ocean.mp3"
     f smiling "Well...the grass is really green, it's like miles and miles of it..."
@@ -310,7 +331,7 @@ label window_scene:
     
     scene mind 4 with dissolve
     f smiling "And if you look closely you can see a few mountains peeking behind a cluster of trees. It's extraordinary..."
-
+    
     scene mind 5 with dissolve
     f smiling "Oh and the flowers! they are so beautiful."
     f smiling"It's spring now so they're fully bloomed and in so many different clours, they are pink, yellow and even purple."
@@ -327,19 +348,36 @@ label window_scene:
             jump ending
             
         "No, the parent is lying":
-            $ windowview = "false"
+            $ windowview = "lie"
             f  "Nature is beautiful, %(choice_name)s"
             p "I really miss looking out the window..I took that for granted."
             p "I would give anything just to look out the window right now.."
             jump ending
             
-            
+
+label wakeup_scene:
+    
+    scene black
+    play sound "audio/thunderstorm.mp3"
+    #scene kid room?
+    p "Dad, dad where are you?"
+    play sound "audio/footsteps.mp3"
+    show father armcross right at center 
+    with dissolve
+    f "I am here %(choice_name)s, what's wrong?" 
+    p "Oh, Dad, I had the scariest dream"  
+    p "I was in the hospital, It was dark and I couldn't see, It was awful!"    
+    p "Dad, can you please open my blinds, I really need to see what is outside my window." 
+    $ windowview = "truth"
+    jump ending                                                                                      
+    
+
 label ending:
     
     if windowview == "truth":
-        show windowscene pretty with dissolve #need to be changed to window scene
+        show windowscene pretty with dissolve
          
-    elif windowview == "false":
+    elif windowview == "lie":
         scene windowscene pretty
         show screen windowscene_overlay
         pause
