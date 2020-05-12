@@ -28,7 +28,7 @@ init python:
 ## Team vb have changed the following color of name  game to displaye in dark green color.
 ################################################################################
 
-define gui.accent_color = '#3d4a0f'
+define gui.accent_color = '#697f1a'
 
 ################################################################################
 ## Team vb have changed the following color code  to #2E2327 to  black color 
@@ -48,7 +48,7 @@ define gui.idle_small_color = '#000000'
 ## Team vb have changed the following color code  to #eb0909 to red color 
 ## to make the color of the hovered txt on the buttons game to displaye in red color.
 ################################################################################
-define gui.hover_color = '#eb0909'
+define gui.hover_color = '#3d4a0f'
 
 
 ################################################################################
@@ -65,7 +65,7 @@ define gui.selected_color = '#eb0909'
 ## to make the color of the buttons  game to displaye in green color.
 ################################################################################
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = '#eb0909'
+define gui.insensitive_color = '#697f1a'
 
 
 ################################################################################
@@ -74,7 +74,7 @@ define gui.insensitive_color = '#eb0909'
 ################################################################################
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-##################################################################################################################
+################################################################################
 define gui.muted_color = '#05def2'
 
 ################################################################################
@@ -97,19 +97,17 @@ define gui.text_color = '#000000'
 ################################################################################
 define gui.interface_text_color = '#000000'
 
-
-
 ################################################################################
-## Team vb have changed the following font  to George.otf 
+## Team vb have changed the following font  to George.ttf 
 ## Fonts and Font Sizes ########################################################
 
-define  gui.text_font = "gui/fonts/George.ttf"
+define  gui.text_font ="DejaVuSans.ttf"
 ## The font used for in-game text.
-define gui.text_font = "gui/fonts/George.ttf"
+define gui.text_font ="DejaVuSans.ttf"
 ## The font used for character names.
-define gui.name_text_font ="DejaVuSans.ttf"
+define gui.name_text_font  = "gui/font/George.ttf"
 ## The font used for out-of-game text.
-define gui.interface_text_font ="DejaVuSans.ttf"
+define gui.interface_text_font  = "gui/font/George.ttf"
 
 
 ################################################################################
@@ -122,7 +120,7 @@ define gui.text_size = 27
 ##Team vb have changed the following font  to size 27 for The size of character 
 ##names.
 ################################################################################
-define gui.name_text_size = 27
+define gui.name_text_size = 30
 
 ################################################################################
 ##Team vb have changed the following font  to size 27 
@@ -150,7 +148,7 @@ define gui.notify_text_size = 27
 ##Team vb have changed the following font  to size 27 
 ## The size of the game's title.
 ################################################################################
-define gui.title_text_size = 37
+define gui.title_text_size = 80
 
 
 ################################################################################
@@ -289,7 +287,7 @@ define gui.choice_button_borders = Borders(100, 5, 100, 5)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#eb0c0c"
+define gui.choice_button_text_idle_color = "#3d4a0f"
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitie_color = "#444444"
 
