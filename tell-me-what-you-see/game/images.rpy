@@ -8,7 +8,7 @@ image lake before = im.Scale("lake_before.jpg", 1280, 720)
 image lake after = im.Scale("lake_after.jpg", 1280, 720)
 image woods = im.Scale("woods.jpg", 1280, 720)
 image underwater = im.Scale("underwater.jpg", 1280, 720)
-image power plant = im.Scale("nuclear_power_plant.jpg", 1280, 720)
+image power plant = im.Scale("nuclear_power_plant.png", 1280, 720)
 image mind 1 = im.Scale("mind_1.png", 1280, 720)
 image mind 2 = im.Scale("mind_2.png", 1280, 720)
 image mind 3 = im.Scale("mind_3.png", 1280, 720)
@@ -26,6 +26,8 @@ image boy after sad = "boy_after_sad.png"
 image boy after smiling = "boy_after_smiling.png"
 image boy hospital sad = "boy_hospital_sad.png"
 image boy hospital screaming = "boy_hospital_screaming.png"
+image boy wakeup = "wakeup_boy.png"
+image boy wakeup screaming = "wakeup_boy_screaming.png"
 
 # Girl
 image side girl = im.Scale("girl_after_sad.png", 250, 500, xoffset=0, yoffset=200)
@@ -36,6 +38,8 @@ image girl after sad = "girl_after_sad.png"
 image girl after smiling = "girl_after_smiling.png"
 image girl hospital sad = "girl_hospital_sad.png"
 image girl hospital screaming = "girl_hospital_screaming.png"
+image girl wakeup= "wakeup_girl.png"
+image girl wakeup screaming = "wakeup_girl_screaming.png"
 
 # Father
 image side father = im.Scale("father_pose_1.png", 250, 500, xoffset=0, yoffset=200)
