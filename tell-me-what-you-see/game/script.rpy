@@ -35,7 +35,7 @@ label start:
             $ choice_gender = "boy"
             $ choice_name = renpy.input("Choose your character's name!")
             if choice_name == "":
-                 "You didn't type a name! You can go back and try again, otherwise we can name the character 'John Doe' you!"
+                 "You didn't type a name! You can go back and try again, otherwise we can name the character 'John Doe' for you!"
                  $ choice_name = "John Doe"
             $ p = b # This fixes the side image problem
             jump hospital_scene_1
@@ -128,6 +128,7 @@ label flashback_scene_1:
             play sound "audio/medium-wind.mp3"
             p "I grabbed a notch on the branch and held it tightly." 
             play sound "audio/thunder.mp3"
+            show jimmy scared
             p "I could hear thunder rolling in and started to feel like i was in danger."
             p "I couldn't get back in, I couldn't let go, I started to panic and shake..."
             stop sound fadeout 1.0
@@ -224,6 +225,7 @@ label flashback_scene_2:
                      
               play sound "audio/wood_crack.mp3"
               p "Oh no I think it's falling, I think I'm falling.."
+              show jimmy scared
               p "I felt the breeze through my hair and in my face."
               stop sound fadeout 1.0
               scene underwater with fade
@@ -357,15 +359,30 @@ label window_scene:
 
 label wakeup_scene:
     
-    scene black
+    scene black 
+    #scene kid room
     play sound "audio/thunderstorm.mp3"
-    #scene kid room?
+
+    if choice_gender == "girl":
+        show girl wakeup screaming at right
+    else:
+        show boy wakeup screaming at right
+    with dissolve
+    
     p "Dad, dad where are you?"
     play sound "audio/footsteps.mp3"
-    show father armcross right at center 
+    show father armcross left at center #Different clothes (PJs) for parent
     with dissolve
     f "I am here %(choice_name)s, what's wrong?" 
-    p "Oh, Dad, I had the scariest dream"  
+    
+    if choice_gender == "girl":
+        show girl wakeup  at right
+    else:
+        show boy wakeup  at right
+    with dissolve
+    
+    #Reminder: Side images need to change here!
+    p "Oh, Dad, I had the scariest dream!!"  
     p "I was in the hospital, It was dark and I couldn't see, It was awful!"    
     p "Dad, can you please open my blinds, I really need to see what is outside my window." 
     $ windowview = "truth"
