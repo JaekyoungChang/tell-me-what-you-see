@@ -122,8 +122,8 @@ label flashback_scene_1:
             p "I climbed up onto a big old gum tree and walked out on the biggest branch hanging over the lake."
             play sound "audio/light_wind.mp3"
             $ renpy.music.set_volume(0.3, 0, channel="music")
-            p "I looked up and noticed dark storm clouds moving over us."
-            p "They came so quickly and the wind got so strong and it felt so angry."
+            p "I looked up and noticed dark storm clouds moving over us." #Need to change image: kid is scared
+            p "They came so quickly and the wind got so strong and it felt so angry." 
             stop sound fadeout 1.0
             play sound "audio/medium-wind.mp3"
             p "I grabbed a notch on the branch and held it tightly." 
@@ -154,7 +154,7 @@ label flashback_scene_1:
             p "pretty sure...Why do you ask?"
             f "Oh, ah, no reason, please go on..."
             p "We were walking past the old nuclear power plant, then we went inside the fence."
-            p "I am not sure how or why we went inside, but I was scared."
+            p "I am not sure how or why we went inside, but I was scared." #Need to change image: kid is scared
             play sound "audio/can_kick.mp3"
             p "Jimmy was kicking an old can along the ground, he was not afraid." 
             p "I felt my legs shaking, something was wrong in there..."
