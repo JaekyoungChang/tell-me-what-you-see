@@ -1581,6 +1581,9 @@ screen windowscene_overlay():
         area (0.5, 0.5, 0.5, 100)
         hovered Show("windowscene_ugly", transition=dissolve)
         unhovered Hide("windowscene_ugly", transition=dissolve)
+        
+
+     
           
     
  

@@ -359,20 +359,19 @@ label window_scene:
 
 label wakeup_scene:
     
-    scene black 
-    #scene kid room
-    play sound "audio/thunderstorm.mp3"
-
     if choice_gender == "girl":
+        scene bedroom 1 with fade
         show girl wakeup screaming at right
     else:
+        scene bedroom 2 with fade
         show boy wakeup screaming at right
     with dissolve
     
+    play sound "audio/thunderstorm.mp3"
+
     p "Dad, dad where are you?"
     play sound "audio/footsteps.mp3"
-    show father armcross left at center #Different clothes (PJs) for parent
-    with dissolve
+    show father armcross left at center with dissolve # Different clothes (PJs) for parent
     f "I am here %(choice_name)s, what's wrong?" 
     
     if choice_gender == "girl":
@@ -381,7 +380,7 @@ label wakeup_scene:
         show boy wakeup  at right
     with dissolve
     
-    #Reminder: Side images need to change here!
+    # Reminder: Side images need to change here!
     p "Oh, Dad, I had the scariest dream!!"  
     p "I was in the hospital, It was dark and I couldn't see, It was awful!"    
     p "Dad, can you please open my blinds, I really need to see what is outside my window." 
