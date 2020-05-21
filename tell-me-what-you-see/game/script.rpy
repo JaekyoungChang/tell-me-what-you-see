@@ -203,7 +203,7 @@ label flashback_scene_2:
             scene lake after with dissolve
             
             play music "audio/life_by MrBusiness.mp3" fadeout 1.0 fadein 1.0
-            $ renpy.music.set_volume(0.3, 0, channel="music")
+            $ renpy.music.set_volume(0.3, 0.5, channel="music")
             play sound "audio/thunderstorm.mp3"
             p "There was a loud crack, I saw sparks and a flash of light."     
             p "The branch started moving and swaying."
@@ -213,12 +213,14 @@ label flashback_scene_2:
              "No, %(choice_name)s doesn't":
                 
               p "I quickly let go of the branch and jumped to the bank."
+              play sound "audio/running.mp3"
               p "We ran as fast as we could, Jimmy was faster than me,"
               p "I was trying to keep up but I couldn't"
               p "I was losing my breath, the thunder was so loud, it was starting to rain."
+              play sound "audio/thunderstorm.mp3"
               p "I felt my feet slip on the muddy track.."
               scene black with dissolve
-              play sound "audio/thunderstorm.mp3"
+              
               jump wakeup_scene
                 
              "Yes, %(choice_name)s does":
@@ -263,6 +265,7 @@ label flashback_scene_2:
         
              "No, %(choice_name)s doesn't":
                 p "I yelled out to Jimmy and told him it's too dangerous and we need to leave now!"
+                play sound "audio/running.mp3"
                 p "We ran as fast as we could, Jimmy was faster than me,"
                 p "I was trying to keep up but I couldn't"
                 play sound "audio/thunderstorm.mp3"
