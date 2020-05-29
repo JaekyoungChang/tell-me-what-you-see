@@ -398,7 +398,9 @@ label wakeup_scene:
         show girl wakeup  at right
         
     else:
-        scene bedroom 2 
+        scene bedroom 2
+        show father pjs at center
+        show boy wakeup  at right
     pause
     
     $ windowview = "truth"
