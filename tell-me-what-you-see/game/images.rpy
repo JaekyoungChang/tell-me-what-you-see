@@ -5,6 +5,8 @@ image room open = im.Scale("room_window_open.png", 1280, 720)
 image room closed = im.Scale("room_window_closed.png", 1280, 720)
 image bedroom 1 = im.Scale("girl_bedroom.png", 1280, 720)
 image bedroom 2 = im.Scale("boy_bedroom.png", 1280, 720)
+image bedroom 1 blinds = im.Scale("girl_bedroom_blinds.png", 1280, 720)
+image bedroom 2 blinds = im.Scale("boy_bedroom_blinds.png", 1280, 720)
 image lake = im.Scale("lake.jpg", 1280, 720)
 image lake before = im.Scale("lake_before.jpg", 1280, 720)
 image lake after = im.Scale("lake_after.jpg", 1280, 720)
@@ -22,6 +24,7 @@ image windowscene pretty =  im.Scale("windowscene-good.png", 1280, 720)
 # Boy
 image side boy = im.Scale("boy_after_sad.png", 250, 500, xoffset=0, yoffset=200)
 image side boy smiling = im.Scale("boy_after_smiling.png", 250, 500, xoffset=0, yoffset=200)
+image side b-before= im.Scale("boy_before_pose_1.png", 250, 500, xoffset=0, yoffset=200)
 image boy before pose 1 = "boy_before_pose_1.png"
 image boy before pose 2 = "boy_before_pose_2.png"
 image boy after sad = "boy_after_sad.png"
@@ -33,6 +36,7 @@ image boy wakeup screaming = "boy_wakeup_screaming.png"
 
 # Girl
 image side girl = im.Scale("girl_after_sad.png", 250, 500, xoffset=0, yoffset=200)
+image side g-before= im.Scale("girl_before_pose_1.png", 250, 500, xoffset=0, yoffset=200)
 image side girl smiling = im.Scale("girl_after_smiling.png", 250, 500, xoffset=0, yoffset=200)
 image girl before pose 1 = "girl_before_pose_1.png"
 image girl before pose 2 = Placeholder("girl") # TODO: replace this
@@ -49,6 +53,8 @@ image side father smiling = im.Scale("father_smile.png", 250, 500, xoffset=0, yo
 image father armcross left = "father_pose_1.png"
 image father armcross right= "father_pose_2.png"
 image father standing = "father_pose_3.png"
+image father pjs = "Parent_PJs_o.png"
+
 
 # Jimmy
 image jimmy = "jimmy.png"

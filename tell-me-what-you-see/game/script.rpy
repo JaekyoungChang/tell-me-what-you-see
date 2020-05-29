@@ -2,6 +2,8 @@
 
 define b = Character("choice_name", image="boy", dynamic=True)
 define g = Character("choice_name", image="girl", dynamic=True)
+define bb = Character("choice_name", image="b-before", dynamic=True)
+define gb = Character("choice_name", image="g-before", dynamic=True)
 define f = Character("Father", image="father")
 define hm = Character("Heart Monitor", image="heartmonitor")
 define v6 = Character("Visual Six")
@@ -217,10 +219,10 @@ label flashback_scene_2:
               p "We ran as fast as we could, Jimmy was faster than me,"
               p "I was trying to keep up but I couldn't"
               p "I was losing my breath, the thunder was so loud, it was starting to rain."
-              play sound "audio/thunderstorm.mp3"
+             play sound "audio/thunderstorm.mp3"
+
               p "I felt my feet slip on the muddy track.."
               scene black with dissolve
-              
               jump wakeup_scene
                 
              "Yes, %(choice_name)s does":
@@ -363,10 +365,12 @@ label window_scene:
 label wakeup_scene:
     
     if choice_gender == "girl":
-        scene bedroom 1 with fade
+        $ p = gb
+        scene bedroom 1 blinds with fade
         show girl wakeup screaming at right
     else:
-        scene bedroom 2 with fade
+        $ p = bb
+        scene bedroom 2 blinds with fade
         show boy wakeup screaming at right
     with dissolve
     
@@ -374,7 +378,7 @@ label wakeup_scene:
 
     p "Dad, dad where are you?"
     play sound "audio/footsteps.mp3"
-    show father armcross left at center with dissolve # Different clothes (PJs) for parent
+    show father pjs at center with dissolve # Different clothes (PJs) for parent
     f "I am here %(choice_name)s, what's wrong?" 
     
     if choice_gender == "girl":
@@ -387,6 +391,16 @@ label wakeup_scene:
     p "Oh, Dad, I had the scariest dream!!"  
     p "I was in the hospital, It was dark and I couldn't see, It was awful!"    
     p "Dad, can you please open my blinds, I really need to see what is outside my window." 
+    
+    if choice_gender == "girl":
+        scene bedroom 1  
+        show father pjs at center
+        show girl wakeup  at right
+        
+    else:
+        scene bedroom 2 
+    pause
+    
     $ windowview = "truth"
     jump ending                                                                                      
     
