@@ -219,7 +219,7 @@ label flashback_scene_2:
               p "We ran as fast as we could, Jimmy was faster than me,"
               p "I was trying to keep up but I couldn't"
               p "I was losing my breath, the thunder was so loud, it was starting to rain."
-             play sound "audio/thunderstorm.mp3"
+              play sound "audio/thunderstorm.mp3"
 
               p "I felt my feet slip on the muddy track.."
               scene black with dissolve
@@ -398,7 +398,9 @@ label wakeup_scene:
         show girl wakeup  at right
         
     else:
-        scene bedroom 2 
+        scene bedroom 2
+        show father pjs at center
+        show boy wakeup  at right
     pause
     
     $ windowview = "truth"
